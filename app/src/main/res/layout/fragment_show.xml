@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Title of the ID Card -->
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="College ID Card"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Name -->
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name: John Doe"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Roll Number -->
+    <TextView
+        android:id="@+id/textViewRollNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Roll Number: 123456"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Course -->
+    <TextView
+        android:id="@+id/textViewCourse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Course: Engineering"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Department -->
+    <TextView
+        android:id="@+id/textViewDepartment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Department: Computer Science"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Gender -->
+    <TextView
+        android:id="@+id/textViewGender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gender: Male"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Button to go back or perform any action -->
+    <Button
+        android:id="@+id/buttonGoBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go Back"
+        android:textSize="18sp" />
+</LinearLayout>
