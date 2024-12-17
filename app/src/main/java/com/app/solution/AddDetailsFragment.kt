@@ -1,5 +1,6 @@
 package com.app.solution
 
+import android.app.Application
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,10 +11,21 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
+
 
 class AddDetailsFragment : Fragment() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,6 +33,7 @@ class AddDetailsFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_add_details, container, false)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
 
         // Initialize views
         val editTextName: EditText = view.findViewById(R.id.editTextName)
@@ -51,13 +64,20 @@ class AddDetailsFragment : Fragment() {
             val selectedGenderId = radioGroupGender.checkedRadioButtonId
             val gender = view.findViewById<RadioButton>(selectedGenderId)?.text.toString()
 
-            // Create a Bundle to pass data
-            val bundle = Bundle()
-            bundle.putString("name", name)
-            bundle.putString("rollNumber", rollNumber)
-            bundle.putString("course", course)
-            bundle.putString("department", department)
-            bundle.putString("gender", gender)
+
+
+
+
+            Toast.makeText(requireContext(), "Data inserted successfully", Toast.LENGTH_SHORT).show()
+
+            // Create a Bundle to pass data to the next fragment
+            val bundle = Bundle().apply {
+                putString("name", name)
+                putString("rollNumber", rollNumber)
+                putString("course", course)
+                putString("department", department)
+                putString("gender", gender)
+            }
 
             // Create ShowFragment and set arguments
             val showFragment = ShowDetailsFragment()
@@ -69,7 +89,6 @@ class AddDetailsFragment : Fragment() {
                 .addToBackStack(null)
                 .commit()
         }
-
 
         return view
     }

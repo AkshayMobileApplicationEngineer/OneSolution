@@ -2,15 +2,15 @@
 plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
-
 }
 
 buildscript {
     repositories {
-        google()  // Ensure this is added
+        google()
         mavenCentral()
+        maven { url = uri("https://jitpack.io") }
     }
     dependencies {
-        classpath ("com.google.gms:google-services:4.3.15") ; // Make sure this line is added (latest version)
+        classpath("com.google.gms:google-services:4.3.15")
     }
 }

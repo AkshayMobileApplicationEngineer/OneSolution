@@ -9,9 +9,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import android.widget.Button
 import android.app.Dialog
+import android.content.Intent
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
+import com.app.quizparlour.ui.fragment.LoginFragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainFragment : Fragment() {
@@ -32,7 +34,14 @@ class MainFragment : Fragment() {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             fabAdd.setOnClickListener {
-                showCustomDialog()
+                showMessage("Floating Action Button clicked")
+
+                val inteent= Intent(requireContext(),LoginActivity::class.java)
+                startActivity(inteent)
+
+                //navigateToFragment(LoginFragment())
+
+                //showCustomDialog()
             }
         }
 

@@ -7,10 +7,14 @@ plugins {
 
 buildscript {
     repositories {
-        google()  // Ensure this is added
+        google()
         mavenCentral()
+        maven {
+            url ("https://jitpack.io") 
+        }  // Add JitPack if not added
     }
+
     dependencies {
-        classpath 'com.google.gms:google-services:4.3.15'  // Make sure this line is added (latest version)
+        classpath ("com.google.gms:google-services:4.3.15") ; // Make sure this line is added (latest version)
     }
 }
