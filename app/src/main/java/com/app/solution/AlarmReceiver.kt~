@@ -1,0 +1,32 @@
+package com.app.solution
+
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.media.MediaPlayer
+import android.util.Log
+import android.widget.Toast
+
+class AlarmReceiver : BroadcastReceiver() {
+    override fun onReceive(context: Context, intent: Intent) {
+        // Show a toast when the alarm is triggered
+        Toast.makeText(context, "Alarm Triggered!", Toast.LENGTH_SHORT).show()
+
+        // Log that the alarm was triggered
+        Log.d("AlarmReceiver", "Alarm triggered at: ${System.currentTimeMillis()}")
+
+        // Play the custom alarm sound (make sure the sound file is placed in res/raw/alarm_sound.mp3)
+        val mediaPlayer = MediaPlayer.create(context, R.raw.iphone_alarm)
+        mediaPlayer.start()
+
+        // Log that the sound started playing
+        Log.d("AlarmReceiver", "Playing alarm sound")
+
+        // Optionally, set up an onCompletionListener to release the MediaPlayer when the sound finishes
+        mediaPlayer.setOnCompletionListener {
+            it.release()
+            // Log that the sound has finished and MediaPlayer is released
+            Log.d("AlarmReceiver", "Alarm sound finished, MediaPlayer released")
+        }
+    }
+}

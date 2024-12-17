@@ -6,14 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        //Automatically go to MainFragment
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, MainFragment())
-            .commit()
-
+        setContentView(R.layout.activity_home)
     }
 }

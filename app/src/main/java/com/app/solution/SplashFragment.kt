@@ -1,12 +1,21 @@
 package com.app.solution
 
+import android.Manifest
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.provider.Settings
+import androidx.appcompat.app.AlertDialog
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 
 class SplashFragment : Fragment() {
 
@@ -18,6 +27,9 @@ class SplashFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_splash, container, false)
+
+
+
 
         // Post a delayed task to switch fragments after 2 seconds
         handler.postDelayed({
@@ -31,6 +43,7 @@ class SplashFragment : Fragment() {
 
         return view
     }
+
 
     override fun onDestroyView() {
         // Remove any pending tasks in case the fragment is destroyed before the task runs

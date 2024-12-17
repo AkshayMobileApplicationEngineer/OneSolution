@@ -2,4 +2,14 @@
     <string name="app_name">Solution</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+<string name="notification_channel_name">Default Channel</string>
+<string name="notification_channel_description">This is the default notification channel</string>
+<string name="fab_clicked_message">Floating Action Button clicked</string>
+<string name="notification_title">Action Button Clicked</string>
+<string name="notification_content">You have clicked the floating action button!</string>
+<string name="insert_selected">INSERT option selected</string>
+<string name="get_selected">GET option selected</string>
+<string name="put_selected">PUT option selected</string>
+<string name="delete_selected">DELETE option selected</string>
 </resources>
