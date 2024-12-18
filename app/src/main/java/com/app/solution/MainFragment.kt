@@ -52,7 +52,7 @@ class MainFragment : Fragment() {
         Log.e(TAG, "View inflated successfully")
         scheduleDailyNotification()
         // Initialize views
-        fabAdd = view.findViewById(R.id.fabAdd)
+        fabAdd = view.findViewById(R.id.fab_action)
         Log.e(TAG, "FAB initialized")
 
         // Check and request notification permission
